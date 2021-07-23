@@ -33,7 +33,7 @@ Once the sample app code is on your computer, you can do the following steps to 
 5. Navigate to [http://localhost:8080/](http://localhost:8080/), fill the form and submit it
 6. Copy your tokens
 
-## Run the existing Docker container
+## Run the existing Docker image
 
 Run with
 
