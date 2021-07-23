@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>QB OAuth :: Provide info</title>
+</head>
+<body>
+  <h1>Quickbooks OAuth2 - Get Authorization Tokens</h1>
+
+  <div class="container-fluid px-3">
+    <h2>Provide OAuth2 info</h2>
+
+    <form th:action="@{/connectToQuickbooks}" method="post">
+      <div class="mb-3">
+        <label for="oAuth2AppClientId" class="form-label">Client ID</label>
+        <input class="form-control" type="text" id="oAuth2AppClientId" name="oAuth2AppClientId" th:value="${oAuth2AppClientId}">
+        <div id="oAuth2AppClientIdHelp" class="form-text">The app client id on Quickbooks</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="oAuth2AppClientSecret" class="form-label">Client Secret</label>
+        <input class="form-control" type="text" id="oAuth2AppClientSecret" name="oAuth2AppClientSecret" th:value="${oAuth2AppClientSecret}">
+        <div id="oAuth2AppClientSecretHelp" class="form-text">The app secret on Quickbooks</div>
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="production" name="production">
+        <label class="form-check-label" for="production">Production</label>
+        <div id="productionHelp" class="form-text">If checked, production; sandbox otherwise</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="oAuth2AppRedirectUri" class="form-label">Redirect URI</label>
+        <input class="form-control" type="text" id="oAuth2AppRedirectUri" name="oAuth2AppRedirectUri" th:value="${oAuth2AppRedirectUri}">
+        <div id="oAuth2AppRedirectUriHelp" class="form-text">This value must be present in the authorized Redirect URILs on Quickbooks</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Connect to Quickbooks</button>
+    </form>
+  </div>
+</body>
+</html>
