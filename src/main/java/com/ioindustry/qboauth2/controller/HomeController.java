@@ -60,9 +60,6 @@ public class HomeController {
         try {
             List<Scope> scopes = new ArrayList<>();
             scopes.add(Scope.Accounting);
-            System.out.println(scopes);
-            System.out.println(redirectUri);
-            System.out.println(csrf);
             return new RedirectView(oauth2Config.prepareUrl(scopes, redirectUri, csrf), true, true, false);
         } catch (InvalidRequestException e) {
             logger.error("Exception calling connectToQuickbooks ", e);
